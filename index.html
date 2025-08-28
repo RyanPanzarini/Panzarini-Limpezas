@@ -28,7 +28,7 @@
             right: -100%;
         }
         .banner-bg {
-            background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3');
+            background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('imagens/Capa.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -47,11 +47,11 @@
     </style>
 </head>
 <body class="font-sans bg-white">
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/5542999758547" class="whatsapp-button bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition">
-        <i class="fab fa-whatsapp text-2xl"></i>
-    </a>
-
+    <!-- Carrinho Botão -->
+    <button id="floating-cart" class="whatsapp-button bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition">
+    <i class="fas fa-shopping-cart text-2xl"></i>
+    <span id="floating-cart-count" class="absolute -top-2 -right-2 bg-white text-blue-600 text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+</button>
     <!-- Header -->
     <header class="sticky top-0 z-50 bg-white shadow-md">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -462,25 +462,25 @@
         // Sample product data
         const products = [
             // Automotive Products
-            { id: 1, name: "Shampoo Car Cremonex", category: "automotive", volume: "5L", price: 19.55, image: "https://via.placeholder.com/300x300?text=Shampoo+Car", offer: false },
-            { id: 2, name: "Desengraxante", category: "automotive", volume: "5L", price: 24.90, image: "https://via.placeholder.com/300x300?text=Desengraxante", offer: true },
-            { id: 3, name: "Limpa Alumínio", category: "automotive", volume: "1L", price: 18.75, image: "https://via.placeholder.com/300x300?text=Limpa+Aluminio", offer: false },
-            { id: 4, name: "Pretinho de Pneu", category: "automotive", volume: "1L", price: 22.50, image: "https://via.placeholder.com/300x300?text=Pretinho+Pneu", offer: false },
-            { id: 5, name: "Silicona Brilho", category: "automotive", volume: "500ml", price: 15.90, image: "https://via.placeholder.com/300x300?text=Silicona+Brilho", offer: true },
+            { id: 1, name: "Shampoo Car Cremonex", category: "automotive", volume: "5L", price: 25,90, image: "imagens/shampoo.png", offer: false },
+            { id: 2, name: "Desengraxante", category: "automotive", volume: "5L", price: 25,90, image: "imagens/desengraxante.png", offer: true },
+            { id: 3, name: "Limpa Alumínio", category: "automotive", volume: "5L", price: 25.90, image: "imagens/Aluminio.png", offer: false },
+            { id: 4, name: "Pretinho de Pneu", category: "automotive", volume: "1L", price: 17.50, image: "imagens/silicona.png", offer: false },
+            { id: 5, name: "Silicona Brilho", category: "automotive", volume: "500ml", price: 21.90, image: "imagens/pretinho.png", offer: true },
             
             // Domestic Products
-            { id: 6, name: "Água Sanitária", category: "domestic", volume: "5L", price: 9.60, image: "https://via.placeholder.com/300x300?text=Agua+Sanitaria", offer: false },
-            { id: 7, name: "Álcool Perfumado", category: "domestic", volume: "5L", price: 14.25, image: "https://via.placeholder.com/300x300?text=Alcool+Perfumado", offer: false },
-            { id: 8, name: "Amaciante Concentrado", category: "domestic", volume: "5L", price: 28.90, image: "https://via.placeholder.com/300x300?text=Amaciante", offer: true },
-            { id: 9, name: "Detergente Líquido", category: "domestic", volume: "5L", price: 12.80, image: "https://via.placeholder.com/300x300?text=Detergente", offer: false },
-            { id: 10, name: "Limpa Vidros", category: "domestic", volume: "1L", price: 8.90, image: "https://via.placeholder.com/300x300?text=Limpa+Vidros", offer: false },
-            { id: 11, name: "Multiusos", category: "domestic", volume: "5L", price: 16.50, image: "https://via.placeholder.com/300x300?text=Multiusos", offer: false },
-            
+            { id: 6, name: "Água Sanitária", category: "domestic", volume: "5L", price: 12.50, image: "imagens/sanitaria.png", offer: false },
+            { id: 7, name: "Álcool Perfumado", category: "domestic", volume: "5L", price: 21.99, image: "imagens/alcool.png", offer: false },
+            { id: 8, name: "Amaciante Concentrado", category: "domestic", volume: "5L", price: 22.90, image: "imagens/amaciante.png", offer: true },
+            { id: 9, name: "Detergente Líquido", category: "domestic", volume: "5L", price: 23.99, image: "imagens/detergente.png", offer: false },
+            { id: 10, name: "Limpa Vidros", category: "domestic", volume: "1L", price: 17.90, image: "imagens/limpavidros.png", offer: false },
+            { id: 11, name: "Multiusos", category: "domestic", volume: "5L", price: 16.50, image: "imagens/multiusos.png", offer: false },
+
             // Concentrated Products
-            { id: 12, name: "Concentrado Lavanda", category: "concentrated", volume: "1L", price: 36.37, image: "https://via.placeholder.com/300x300?text=Lavanda", offer: false },
-            { id: 13, name: "Concentrado Floral", category: "concentrated", volume: "1L", price: 36.37, image: "https://via.placeholder.com/300x300?text=Floral", offer: true },
-            { id: 14, name: "Concentrado Limão", category: "concentrated", volume: "1L", price: 36.37, image: "https://via.placeholder.com/300x300?text=Limao", offer: false },
-            { id: 15, name: "Concentrado Pinho", category: "concentrated", volume: "1L", price: 36.37, image: "https://via.placeholder.com/300x300?text=Pinho", offer: false }
+            { id: 12, name: "Concentrado Lavanda", category: "concentrated", volume: "1L", price: 35.90, image: "imagens/lavanda.png", offer: false },
+            { id: 13, name: "Concentrado Floral", category: "concentrated", volume: "1L", price: 35.90, image: "imagens/floral.png", offer: true },
+            { id: 14, name: "Concentrado Limão", category: "concentrated", volume: "1L", price: 35.90, image: "imagens/limao.png", offer: false },
+            { id: 15, name: "Concentrado Pinho", category: "concentrated", volume: "1L", price: 35.90, image: "imagens/pinho.png", offer: false }
         ];
 
         // Shopping cart
@@ -682,6 +682,8 @@
                 notification.remove();
             }, 3000);
         }
+
+        
 
         // Event Listeners
         document.addEventListener('DOMContentLoaded', () => {
