@@ -140,7 +140,7 @@
                 </div>
 
                 <!-- Product Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="grid grid-cols-2 gap-4 max-w-xs mx-auto px-2 sm:grid-cols-2 sm:max-w-full md:grid-cols-3 lg:grid-cols-4">
                     <!-- Product cards will be inserted here by JavaScript -->
                 </div>
             </div>
@@ -162,19 +162,19 @@
             <div class="container mx-auto px-4">
                 <div class="flex flex-col md:flex-row items-center">
                     <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-                        <h2 class="text-3xl font-bold text-gray-800 mb-6">Sobre Nós</h2>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6">Sobre o produto</h2>
                         <p class="text-gray-600 mb-4">
-                            A Panzarini Limpezas nasceu do cuidado e dedicação de Silvana Panzarini, que sempre acreditou que a limpeza transforma ambientes e transmite bem-estar. Com sua experiência e paixão, Silvana desenvolveu produtos de excelente qualidade, prontos para uso, que unem praticidade, eficiência e preços justos.
+                            Local destinado para como é feito o produto 
                         </p>
                         <p class="text-gray-600 mb-4">
-                            Nossa missão é fornecer soluções de limpeza que atendam tanto ao uso doméstico quanto profissional, garantindo resultados visíveis desde a primeira aplicação.
+                            <!-- Nossa missão é fornecer soluções de limpeza que atendam tanto ao uso doméstico quanto profissional, garantindo resultados visíveis desde a primeira aplicação. -->
                         </p>
                         <p class="text-gray-600">
-                            Com a dedicação familiar e a confiança de quem já experimentou, a Panzarini Limpezas segue crescendo, levando mais brilho e higiene para casas, empresas e veículos.
+                            <!-- Com a dedicação familiar e a confiança de quem já experimentou, a Panzarini Limpezas segue crescendo, levando mais brilho e higiene para casas, empresas e veículos. -->
                         </p>
                     </div>
                     <div class="md:w-1/2">
-                        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3" alt="Equipe Panzarini Limpezas" class="rounded-lg shadow-lg w-full h-auto">
+                        <img src="imagens/sobre.png" alt="Equipe Panzarini Limpezas" class="rounded-lg shadow-lg w-full h-auto">
                     </div>
                 </div>
             </div>
@@ -449,7 +449,7 @@
         // Sample product data
         const products = [
             // Automotive Products
-            { id: 1, name: "Shampoo Car Cremonex", category: "automotive", volume: "5L", price: 19.55, image: "imagens/shampoo.png", offer: false },
+            { id: 1, name: "Shampoo Cremonex", category: "automotive", volume: "5L", price: 19.55, image: "imagens/shampoo.png", offer: false },
             { id: 2, name: "Desengraxante", category: "automotive", volume: "5L", price: 24.90, image: "imagens/desengraxante.png", offer: true },
             { id: 3, name: "Limpa Alumínio", category: "automotive", volume: "1L", price: 18.75, image: "imagens/Aluminio.png", offer: false },
             { id: 4, name: "Pretinho de Pneu", category: "automotive", volume: "1L", price: 22.50, image: "imagens/pretinho.png", offer: false },
@@ -509,8 +509,7 @@
             
             filteredProducts.forEach(product => {
                 const productCard = document.createElement('div');
-                productCard.className = 'product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 relative';
-                
+                productCard.className = 'product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 relative min-h-[340px] flex flex-col';                
                 if (product.offer) {
                     productCard.innerHTML += `
                         <div class="offer-badge bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
@@ -520,17 +519,17 @@
                 }
                 
                 productCard.innerHTML += `
-                    <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-contain p-4">
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg mb-1 text-gray-800">${product.name}</h3>
-                        <p class="text-gray-600 text-sm mb-2">${product.volume}</p>
-                        <p class="font-bold text-blue-600 text-xl mb-4">R$ ${product.price.toFixed(2).replace('.', ',')}</p>
-                        <button class="add-to-cart w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition" 
-                                data-id="${product.id}">
-                            Adicionar ao Carrinho
-                        </button>
-                    </div>
-                `;
+    <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-contain p-4">
+    <div class="p-4 flex-1 flex flex-col justify-between">
+        <h3 class="font-bold text-lg mb-1 text-gray-800 leading-tight min-h-[48px]">${product.name}</h3>
+        <p class="text-gray-600 text-sm mb-2">${product.volume}</p>
+        <p class="font-bold text-blue-600 text-xl mb-4">R$ ${product.price.toFixed(2).replace('.', ',')}</p>
+        <button class="add-to-cart w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition" 
+                data-id="${product.id}">
+            Adicionar ao Carrinho
+        </button>
+    </div>
+`;
                 
                 productGrid.appendChild(productCard);
             });
