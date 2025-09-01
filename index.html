@@ -444,27 +444,164 @@
     <script>
         // Sample product data
         const products = [
-            // Automotive Products
-            { id: 1, name: "Shampoo Cremonex", category: "automotive", volume: "5L", price: 19.55, image: "imagens/shampoo.png", offer: false },
-            { id: 2, name: "Desengraxante", category: "automotive", volume: "5L", price: 24.90, image: "imagens/desengraxante.png", offer: true },
-            { id: 3, name: "Limpa Alumínio", category: "automotive", volume: "1L", price: 18.75, image: "imagens/Aluminio.png", offer: false },
-            { id: 4, name: "Pretinho de Pneu", category: "automotive", volume: "1L", price: 22.50, image: "imagens/pretinho.png", offer: false },
-            { id: 5, name: "Silicona Brilho", category: "automotive", volume: "500ml", price: 15.90, image: "imagens/silicona.png", offer: true },
-
-            // Domestic Products
-            { id: 6, name: "Água Sanitária", category: "domestic", volume: "5L", price: 9.60, image: "imagens/sanitaria.png", offer: false },
-            { id: 7, name: "Álcool Perfumado", category: "domestic", volume: "5L", price: 14.25, image: "imagens/alcool.png", offer: false },
-            { id: 8, name: "Amaciante Concentrado", category: "domestic", volume: "5L", price: 28.90, image: "imagens/amaciante.png", offer: true },
-            { id: 9, name: "Detergente Líquido", category: "domestic", volume: "5L", price: 12.80, image: "imagens/detergente.png", offer: false },
-            { id: 10, name: "Limpa Vidros", category: "domestic", volume: "1L", price: 8.90, image: "imagens/limpavidros.png", offer: false },
-            { id: 11, name: "Multiusos", category: "domestic", volume: "5L", price: 16.50, image: "imagens/multiusos.png", offer: false },
-
-            // Concentrated Products
-            { id: 12, name: "Concentrado Lavanda", category: "concentrated", volume: "1L", price: 36.37, image: "imagens/lavanda.png", offer: false },
-            { id: 13, name: "Concentrado Floral", category: "concentrated", volume: "1L", price: 36.37, image: "imagens/floral.png", offer: true },
-            { id: 14, name: "Concentrado Limão", category: "concentrated", volume: "1L", price: 36.37, image: "imagens/limao.png", offer: false },
-            { id: 15, name: "Concentrado Pinho", category: "concentrated", volume: "1L", price: 36.37, image: "imagens/pinho.png", offer: false }
-        ];
+    {
+        id: 1,
+        name: "Shampoo Cremonex",
+        category: "automotive",
+        options: [
+            { volume: "1L", price: 5.00 },
+            { volume: "5L", price: 19.55 }
+        ],
+        image: "imagens/shampoo.png",
+        offer: false
+    },
+    {
+        id: 2,
+        name: "Car Desengraxante",
+        category: "automotive",
+        options: [
+            { volume: "1L", price: 7.00 },
+            { volume: "5L", price: 24.90 }
+        ],
+        image: "imagens/desengraxante.png",
+        offer: true
+    },
+    {
+        id: 3,
+        name: "Limpa Alumínio",
+        category: "automotive",
+        options: [
+            { volume: "1L", price: 18.75 }
+        ],
+        image: "imagens/Aluminio.png",
+        offer: false
+    },
+    {
+        id: 4,
+        name: "Pretinho de Pneu",
+        category: "automotive",
+        options: [
+            { volume: "1L", price: 22.50 }
+        ],
+        image: "imagens/pretinho.png",
+        offer: false
+    },
+    {
+        id: 5,
+        name: "Silicona Brilho",
+        category: "automotive",
+        options: [
+            { volume: "500ml", price: 15.90 }
+        ],
+        image: "imagens/silicona.png",
+        offer: true
+    },
+    {
+        id: 6,
+        name: "Água Sanitária",
+        category: "domestic",
+        options: [
+            { volume: "1L", price: 2.50 },
+            { volume: "5L", price: 9.60 }
+        ],
+        image: "imagens/sanitaria.png",
+        offer: false
+    },
+    {
+        id: 7,
+        name: "Álcool Perfumado",
+        category: "domestic",
+        options: [
+            { volume: "1L", price: 3.50 },
+            { volume: "5L", price: 14.25 }
+        ],
+        image: "imagens/alcool.png",
+        offer: false
+    },
+    {
+        id: 8,
+        name: "Amaciante Concentrado",
+        category: "domestic",
+        options: [
+            { volume: "1L", price: 7.00 },
+            { volume: "5L", price: 28.90 }
+        ],
+        image: "imagens/amaciante.png",
+        offer: true
+    },
+    {
+        id: 9,
+        name: "Detergente Líquido",
+        category: "domestic",
+        options: [
+            { volume: "1L", price: 3.00 },
+            { volume: "5L", price: 12.80 }
+        ],
+        image: "imagens/detergente.png",
+        offer: false
+    },
+    {
+        id: 10,
+        name: "Limpa Vidros",
+        category: "domestic",
+        options: [
+            { volume: "1L", price: 8.90 }
+        ],
+        image: "imagens/limpavidros.png",
+        offer: false
+    },
+    {
+        id: 11,
+        name: "Multiusos",
+        category: "domestic",
+        options: [
+            { volume: "1L", price: 4.50 },
+            { volume: "5L", price: 16.50 }
+        ],
+        image: "imagens/multiusos.png",
+        offer: false
+    },
+    {
+        id: 12,
+        name: "Concentrado Lavanda",
+        category: "concentrated",
+        options: [
+            { volume: "1L", price: 36.37 }
+        ],
+        image: "imagens/lavanda.png",
+        offer: false
+    },
+    {
+        id: 13,
+        name: "Concentrado Floral",
+        category: "concentrated",
+        options: [
+            { volume: "1L", price: 36.37 }
+        ],
+        image: "imagens/floral.png",
+        offer: true
+    },
+    {
+        id: 14,
+        name: "Concentrado Limão",
+        category: "concentrated",
+        options: [
+            { volume: "1L", price: 36.37 }
+        ],
+        image: "imagens/limao.png",
+        offer: false
+    },
+    {
+        id: 15,
+        name: "Concentrado Pinho",
+        category: "concentrated",
+        options: [
+            { volume: "1L", price: 36.37 }
+        ],
+        image: "imagens/pinho.png",
+        offer: false
+    }
+];
 
         // Shopping cart
         let cart = [];
@@ -504,31 +641,36 @@
                 : products.filter(product => product.category === filterCategory);
             
             filteredProducts.forEach(product => {
-                const productCard = document.createElement('div');
-                productCard.className = 'product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 relative min-h-[340px] flex flex-col';                
-                if (product.offer) {
-                    productCard.innerHTML += `
-                        <div class="offer-badge bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
-                            OFERTA
-                        </div>
-                    `;
-                }
-                
-                productCard.innerHTML += `
-    <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-contain p-4">
-    <div class="p-4 flex-1 flex flex-col justify-between">
-        <h3 class="font-bold text-lg mb-1 text-gray-800 leading-tight min-h-[48px]">${product.name}</h3>
-        <p class="text-gray-600 text-sm mb-2">${product.volume}</p>
-        <p class="font-bold text-blue-600 text-xl mb-4">R$ ${product.price.toFixed(2).replace('.', ',')}</p>
-        <button class="add-to-cart w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition" 
-                data-id="${product.id}">
-            Adicionar ao Carrinho
-        </button>
-    </div>
-`;
-                
-                productGrid.appendChild(productCard);
-            });
+    const productCard = document.createElement('div');
+    productCard.className = 'product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 relative min-h-[340px] flex flex-col';
+
+    // Litragem e preço inicial
+    const defaultOption = product.options ? product.options[0] : { volume: product.volume, price: product.price };
+
+    productCard.innerHTML += `
+        <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-contain p-4">
+        <div class="p-4 flex-1 flex flex-col justify-between">
+            <h3 class="font-bold text-lg mb-1 text-gray-800 leading-tight min-h-[48px]">${product.name}</h3>
+            <div class="mb-2 flex gap-2">
+                ${(product.options || [{ volume: product.volume, price: product.price }])
+                    .map((opt, idx) => `
+                        <button class="volume-btn px-2 py-1 rounded border ${idx === 0 ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700'}"
+                            data-id="${product.id}" data-volume="${opt.volume}" data-price="${opt.price}">
+                            ${opt.volume}
+                        </button>
+                    `).join('')}
+            </div>
+            <p class="text-gray-600 text-sm mb-2 volume-label">${defaultOption.volume}</p>
+            <p class="font-bold text-blue-600 text-xl mb-4 price-label">R$ ${defaultOption.price.toFixed(2).replace('.', ',')}</p>
+            <button class="add-to-cart w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition"
+                data-id="${product.id}" data-volume="${defaultOption.volume}" data-price="${defaultOption.price}">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+    `;
+
+    productGrid.appendChild(productCard);
+});
         }
 
         // Display offer products
@@ -542,42 +684,53 @@
                 productCard.className = 'product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 relative';
                 
                 productCard.innerHTML += `
-                    <div class="offer-badge bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
-                        OFERTA
-                    </div>
-                    <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-contain p-4">
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg mb-1 text-gray-800">${product.name}</h3>
-                        <p class="text-gray-600 text-sm mb-2">${product.volume}</p>
-                        <p class="font-bold text-blue-600 text-xl mb-4">R$ ${product.price.toFixed(2).replace('.', ',')}</p>
-                        <button class="add-to-cart w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition" 
-                                data-id="${product.id}">
-                            Adicionar ao Carrinho
-                        </button>
-                    </div>
-                `;
+    <div class="offer-badge bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+        OFERTA
+    </div>
+    <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-contain p-4">
+    <div class="p-4 flex flex-col justify-between">
+        <h3 class="font-bold text-lg mb-1 text-gray-800">${product.name}</h3>
+        <div class="mb-2 flex gap-2">
+            ${(product.options)
+                .map((opt, idx) => `
+                    <button class="volume-btn px-2 py-1 rounded border ${idx === 0 ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700'}"
+                        data-id="${product.id}" data-volume="${opt.volume}" data-price="${opt.price}">
+                        ${opt.volume}
+                    </button>
+                `).join('')}
+        </div>
+        <p class="text-gray-600 text-sm mb-2 volume-label">${product.options[0].volume}</p>
+        <p class="font-bold text-blue-600 text-xl mb-4 price-label">R$ ${product.options[0].price.toFixed(2).replace('.', ',')}</p>
+        <button class="add-to-cart w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition"
+            data-id="${product.id}" data-volume="${product.options[0].volume}" data-price="${product.options[0].price}">
+            Adicionar ao Carrinho
+        </button>
+    </div>
+`;
                 
                 offersGrid.appendChild(productCard);
             });
         }
 
         // Add to cart
-        function addToCart(productId) {
-            const product = products.find(p => p.id === productId);
-            const existingItem = cart.find(item => item.id === productId);
-            
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({
-                    ...product,
-                    quantity: 1
-                });
-            }
-            
-            updateCart();
-            showCartNotification();
-        }
+        function addToCart(productId, volume, price) {
+    const product = products.find(p => p.id === productId);
+    const existingItem = cart.find(item => item.id === productId && item.volume === volume);
+
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            ...product,
+            volume,
+            price: parseFloat(price),
+            quantity: 1
+        });
+    }
+
+    updateCart();
+    showCartNotification();
+}
 
         // Update cart display
         function updateCart() {
@@ -589,32 +742,32 @@
                 emptyCartMessage.classList.add('hidden');
                 
                 cart.forEach(item => {
-                    const cartItem = document.createElement('div');
-                    cartItem.className = 'flex items-center border-b pb-4';
-                    cartItem.innerHTML = `
-                        <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-contain">
-                        <div class="ml-4 flex-grow">
-                            <h4 class="font-medium text-gray-800">${item.name}</h4>
-                            <p class="text-sm text-gray-600">${item.volume}</p>
-                            <div class="flex items-center mt-1">
-                                <button class="decrease-quantity text-gray-500 hover:text-blue-600" data-id="${item.id}">
-                                    <i class="fas fa-minus text-xs"></i>
-                                </button>
-                                <span class="quantity mx-2 text-gray-700">${item.quantity}</span>
-                                <button class="increase-quantity text-gray-500 hover:text-blue-600" data-id="${item.id}">
-                                    <i class="fas fa-plus text-xs"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="text-right">
-                            <p class="font-medium text-gray-800">R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}</p>
-                            <button class="remove-item text-red-500 hover:text-red-700 text-sm mt-1" data-id="${item.id}">
-                                Remover
-                            </button>
-                        </div>
-                    `;
-                    cartItems.appendChild(cartItem);
-                });
+    const cartItem = document.createElement('div');
+    cartItem.className = 'cart-item flex items-center border-b pb-4';
+    cartItem.innerHTML = `
+        <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-contain">
+        <div class="ml-4 flex-grow">
+            <h4 class="font-medium text-gray-800">${item.name}</h4>
+            <p class="text-sm text-gray-600">${item.volume}</p>
+            <div class="flex items-center mt-1">
+                <button class="decrease-quantity text-gray-500 hover:text-blue-600" data-id="${item.id}" data-volume="${item.volume}">
+                    <i class="fas fa-minus text-xs"></i>
+                </button>
+                <span class="quantity mx-2 text-gray-700">${item.quantity}</span>
+                <button class="increase-quantity text-gray-500 hover:text-blue-600" data-id="${item.id}" data-volume="${item.volume}">
+                    <i class="fas fa-plus text-xs"></i>
+                </button>
+            </div>
+        </div>
+        <div class="text-right">
+            <p class="font-medium text-gray-800">R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}</p>
+            <button class="remove-item text-red-500 hover:text-red-700 text-sm mt-1" data-id="${item.id}" data-volume="${item.volume}">
+                Remover
+            </button>
+        </div>
+    `;
+    cartItems.appendChild(cartItem);
+});
             }
             
             // Update totals
@@ -666,47 +819,76 @@
         }
 
         // Event Listeners
-        document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
             displayProducts();
             displayOffers();
-            
+             
             // Add to cart buttons
-            document.addEventListener('click', (e) => {
-                if (e.target.classList.contains('add-to-cart') || e.target.closest('.add-to-cart')) {
-                    const button = e.target.classList.contains('add-to-cart') ? e.target : e.target.closest('.add-to-cart');
-                    const productId = parseInt(button.getAttribute('data-id'));
-                    addToCart(productId);
-                }
-                
+           document.addEventListener('click', (e) => {
+
+
+    // Troca de litragem
+    if (e.target.classList.contains('volume-btn')) {
+    const btn = e.target;
+    const card = btn.closest('.product-card');
+    const allBtns = card.querySelectorAll('.volume-btn');
+    allBtns.forEach(b => b.classList.remove('bg-blue-600', 'text-white'));
+    btn.classList.add('bg-blue-600', 'text-white');
+
+    // Atualiza litragem e preço
+    const volume = btn.getAttribute('data-volume');
+    const price = parseFloat(btn.getAttribute('data-price'));
+    card.querySelector('.volume-label').textContent = volume;
+    card.querySelector('.price-label').textContent = `R$ ${price.toFixed(2).replace('.', ',')}`;
+
+    // Atualiza botão de carrinho
+    const addBtn = card.querySelector('.add-to-cart');
+    addBtn.setAttribute('data-volume', volume);
+    addBtn.setAttribute('data-price', price);
+}
+    if (e.target.classList.contains('add-to-cart') || e.target.closest('.add-to-cart')) {
+    const button = e.target.classList.contains('add-to-cart') ? e.target : e.target.closest('.add-to-cart');
+    const productId = parseInt(button.getAttribute('data-id'));
+    const volume = button.getAttribute('data-volume');
+    const price = button.getAttribute('data-price');
+    addToCart(productId, volume, price);
+}
                 // Cart quantity controls
-                if (e.target.classList.contains('increase-quantity') || e.target.closest('.increase-quantity')) {
-                    const button = e.target.classList.contains('increase-quantity') ? e.target : e.target.closest('.increase-quantity');
-                    const productId = parseInt(button.getAttribute('data-id'));
-                    const item = cart.find(item => item.id === productId);
-                    if (item) item.quantity += 1;
-                    updateCart();
-                }
-                
-                if (e.target.classList.contains('decrease-quantity') || e.target.closest('.decrease-quantity')) {
-                    const button = e.target.classList.contains('decrease-quantity') ? e.target : e.target.closest('.decrease-quantity');
-                    const productId = parseInt(button.getAttribute('data-id'));
-                    const item = cart.find(item => item.id === productId);
-                    if (item) {
-                        item.quantity -= 1;
-                        if (item.quantity <= 0) {
-                            cart = cart.filter(i => i.id !== productId);
-                        }
-                    }
-                    updateCart();
-                }
-                
-                // Remove item
-                if (e.target.classList.contains('remove-item') || e.target.closest('.remove-item')) {
-                    const button = e.target.classList.contains('remove-item') ? e.target : e.target.closest('.remove-item');
-                    const productId = parseInt(button.getAttribute('data-id'));
-                    cart = cart.filter(item => item.id !== productId);
-                    updateCart();
-                }
+                // ...dentro do event listener de click...
+
+// Aumentar quantidade
+if (e.target.classList.contains('increase-quantity') || e.target.closest('.increase-quantity')) {
+    const button = e.target.classList.contains('increase-quantity') ? e.target : e.target.closest('.increase-quantity');
+    const productId = parseInt(button.getAttribute('data-id'));
+    const volume = button.closest('.cart-item')?.querySelector('.text-sm.text-gray-600')?.textContent || button.getAttribute('data-volume');
+    const item = cart.find(item => item.id === productId && item.volume === volume);
+    if (item) item.quantity += 1;
+    updateCart();
+}
+
+// Diminuir quantidade
+if (e.target.classList.contains('decrease-quantity') || e.target.closest('.decrease-quantity')) {
+    const button = e.target.classList.contains('decrease-quantity') ? e.target : e.target.closest('.decrease-quantity');
+    const productId = parseInt(button.getAttribute('data-id'));
+    const volume = button.closest('.cart-item')?.querySelector('.text-sm.text-gray-600')?.textContent || button.getAttribute('data-volume');
+    const item = cart.find(item => item.id === productId && item.volume === volume);
+    if (item) {
+        item.quantity -= 1;
+        if (item.quantity <= 0) {
+            cart = cart.filter(i => !(i.id === productId && i.volume === volume));
+        }
+    }
+    updateCart();
+}
+
+// Remover item
+if (e.target.classList.contains('remove-item') || e.target.closest('.remove-item')) {
+    const button = e.target.classList.contains('remove-item') ? e.target : e.target.closest('.remove-item');
+    const productId = parseInt(button.getAttribute('data-id'));
+    const volume = button.closest('.cart-item')?.querySelector('.text-sm.text-gray-600')?.textContent || button.getAttribute('data-volume');
+    cart = cart.filter(item => !(item.id === productId && item.volume === volume));
+    updateCart();
+}
             });
             
             // Cart sidebar toggle
